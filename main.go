@@ -12,7 +12,7 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-const applicationVersion = "v1"
+const applicationVersion = "v2"
 
 const schemaStatement = `CREATE TABLE IF NOT EXISTS items (
 	id serial primary key,
