@@ -23,9 +23,12 @@ on start when it is missing.
 
 | Method | Path | Description |
 |---|---|---|
-| GET | `/health` | `200 {"status":"ok","version":"v1"}` |
+| GET | `/health` | `200 {"status":"ok","version":"v4"}` |
 | GET | `/api/items` | JSON array of items |
 | POST | `/api/items` | Body `{"name":"..."}` → `201` with the created item |
+| GET | `/api/items/{id}` | `200` with the item, `404` when it does not exist |
+| PUT | `/api/items/{id}` | Body `{"name":"..."}` → `200` with the renamed item, `404` when it does not exist |
+| DELETE | `/api/items/{id}` | `204`, `404` when it does not exist |
 
 ```sh
 curl localhost:8080/health
