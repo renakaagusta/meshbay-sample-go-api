@@ -62,6 +62,7 @@ func main() {
 	}
 	service := &application{database: database}
 	log.Printf("listening on port %s", port)
+	log.Printf("version: 1")
 	if serveError := http.ListenAndServe(":"+port, newRouter(service)); serveError != nil {
 		log.Fatalf("serve: %v", serveError)
 	}
